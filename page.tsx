@@ -1,76 +1,67 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import fs from 'fs'
-import imageToBase64 from 'image-to-base64'
-import { cwd } from "process";
-const sample = async()=>{
 
-
-  
-  
-  fetch('http://localhost:3000/api/found',{
-    method:'POST',
-    headers:{
-      'content-type':'application/json'
-    }
-   })
-}
-
-
-let path = cwd()
-// let value = fs.readFileSync(`${path}/public/google.png`,'base64')
-// console.log(value);
-// const buffer = Buffer.from(value, "base64");
-// console.log(buffer);
-// fs.writeFileSync('./sample.png',buffer);
-
-// let img = fs.readFileSync(`${path}/public/cart.png`)
-// console.log(img);
-// fs.writeFileSync('./simplegg.png',img);
-
-const LoginPage = () => {
-
+const CartPage = () => {
   return (
-    <div className="p-4 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center">
-      {/* BOX */}
-      <Image  src={`/google.png`} alt="oo" width={230} height={224}></Image>
-      <div className=" h-full shadow-2xl rounded-md flex flex-col md:flex-row md:h-[70%] md:w-full lg:w-[60%] 2xl:w-1/2">
-        {/* IMAGE CONTAINER */}
-        <div className="relative h-1/3 w-full md:h-full md:w-1/2">
-          <Image src="/loginBg.png" alt="" fill className="object-cover"/>
+    <div className="h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500 lg:flex-row">
+      {/* PRODUCTS CONTAINER */}
+      <div className="h-1/2 p-4 flex flex-col justify-center overflow-scroll lg:h-full lg:w-2/3 2xl:w-1/2 lg:px-20 xl:px-40">
+        {/* SINGLE ITEM */}
+        <div className="flex items-center justify-between mb-4">
+          <Image src="/temporary/p1.png" alt="" width={100} height={100} />
+          <div className="">
+            <h1 className="uppercase text-xl font-bold">sicilian</h1>
+            <span>Large</span>
+          </div>
+          <h2 className="font-bold">$79.90</h2>
+          <span className="cursor-pointer">X</span>
         </div>
-        {/* FORM CONTAINER */}
-        <div className="p-10 flex flex-col gap-8 md:w-1/2">
-          <h1 className="font-bold text-xl xl:text-3xl">Welcome</h1>
-          <p>Log into your account or create a new one using social buttons</p>
-          <button className="flex gap-4 p-4 ring-1 ring-orange-100 rounded-md">
-            <Image
-              src="/google.png"
-              alt=""
-              width={20}
-              height={20}
-              className="object-contain"
-            />
-            <span>Sign in with Google</span>
-          </button>
-          <button className="flex gap-4 p-4 ring-1 ring-blue-100 rounded-md">
-            <Image
-              src="/facebook.png"
-              alt=""
-              width={20}
-              height={20}
-              className="object-contain"
-            />
-            <span>Sign in with Facebook</span>
-          </button>
-          <p className="text-sm">
-            Have a problem?<Link className="underline" href="/"> Contact us</Link>
-          </p>
+        {/* SINGLE ITEM */}
+        <div className="flex items-center justify-between mb-4">
+          <Image src="/temporary/p1.png" alt="" width={100} height={100} />
+          <div className="">
+            <h1 className="uppercase text-xl font-bold">sicilian</h1>
+            <span>Large</span>
+          </div>
+          <h2 className="font-bold">$79.90</h2>
+          <span className="cursor-pointer">X</span>
         </div>
+        {/* SINGLE ITEM */}
+        <div className="flex items-center justify-between mb-4">
+          <Image src="/temporary/p1.png" alt="" width={100} height={100} />
+          <div className="">
+            <h1 className="uppercase text-xl font-bold">sicilian</h1>
+            <span>Large</span>
+          </div>
+          <h2 className="font-bold">$79.90</h2>
+          <span className="cursor-pointer">X</span>
+        </div>
+      </div>
+      {/* PAYMENT CONTAINER */}
+      <div className="h-1/2 p-4 bg-fuchsia-50 flex flex-col gap-4 justify-center lg:h-full lg:w-1/3 2xl:w-1/2 lg:px-20 xl:px-40 2xl:text-xl 2xl:gap-6">
+        <div className="flex justify-between">
+          <span className="">Subtotal (3 items)</span>
+          <span className="">$81.70</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="">Service Cost</span>
+          <span className="">$0.00</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="">Delivery Cost</span>
+          <span className="text-green-500">FREE!</span>
+        </div>
+        <hr className="my-2" />
+        <div className="flex justify-between">
+          <span className="">TOTAL(INCL. VAT)</span>
+          <span className="font-bold">$81.70</span>
+        </div>
+        <button className="bg-red-500 text-white p-3 rounded-md w-1/2 self-end">
+          CHECKOUT
+        </button>
       </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default CartPage;
